@@ -41,13 +41,10 @@ def clean_data(raw_data: List[RealDictRow]) -> pd.DataFrame:
     # 6. 회사명, 부서, 근무지의 빈 문자열을 NaN으로 변환
     df['회사명'] = df['회사명'].replace('', pd.NA)
     df['부서'] = df['부서'].replace('', pd.NA)
+    df['근무지'] = df['근무지'].replace('', pd.NA)
 
     # 7. employ_status 컬럼 추가 (취업여부)
-    df['employ_status'] = np.where(
-        df['취업구분'].isin(['기타', '선택', '미상']), 
-        0, 
-        1
-    )
+    df['employ_status'] = np.where(df['취업구분'].isin(['기타', '선택', '미상']), 0, 1)
     
     # Define column mapping dictionary
     column_mapping = {
@@ -72,6 +69,8 @@ def clean_data(raw_data: List[RealDictRow]) -> pd.DataFrame:
     # 8. Remove rows where TOEIC_score is NaN
     df = df.dropna(subset=['TOEIC_score'])
 
+    # 9. 필요한 컬럼만 선택
+    df = df[['GPA', 'TOEIC_score', 'employ_status']]
 
     return df
 

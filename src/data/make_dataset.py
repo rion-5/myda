@@ -6,7 +6,7 @@ from .database import get_db_connection # src/data/database.py
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-def collect_data() -> Optional[List[Dict]]:
+def collect_data_db() -> Optional[List[Dict]]:
     """
     Collect data from database in dictionary format
     Returns:
@@ -38,3 +38,23 @@ def collect_data() -> Optional[List[Dict]]:
     finally:
         if conn:
             conn.close()
+
+import pandas as pd
+from pathlib import Path
+
+def collect_data_csv() -> Optional[List[Dict]]:
+    """
+    Load data from CSV file
+    Returns:
+        pd.DataFrame: Raw data from CSV
+    """
+    # Get project root path
+    project_root = Path(__file__).resolve().parents[2]
+    csv_path = project_root / "data" / "raw" / "employ.csv"
+    
+    try:
+        df = pd.read_csv(csv_path)
+        return df.to_dict('records')  # Keep same return format as DB version
+    except Exception as e:
+        print(f"Error loading CSV: {e}")
+        return None

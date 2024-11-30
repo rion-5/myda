@@ -2,7 +2,6 @@
 
 import os
 import pandas as pd
-import numpy as np
 import logging
 from src.data.make_dataset import collect_data_db, collect_data
 from src.data.preprocessing import clean_data

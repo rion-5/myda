@@ -39,6 +39,9 @@ def main():
     # 데이터 수집
     # raw_data = collect_data_db()
     raw_data = collect_data()
+    if(raw_data is None):
+        logger.error("데이터 수집 실패")
+        return
     logger.info("데이터 수집 완료")
     
     # 데이터 전처리

@@ -4,7 +4,7 @@ import os
 import pandas as pd
 import numpy as np
 import logging
-from src.data.make_dataset import collect_data_db, collect_data_csv
+from src.data.make_dataset import collect_data_db, collect_data
 from src.data.preprocessing import clean_data
 from src.analysis.analyze import perform_analysis, interpret_results
 from src.visualization.visualize import create_visualizations
@@ -38,7 +38,7 @@ def main():
     
     # 데이터 수집
     # raw_data = collect_data_db()
-    raw_data = collect_data_csv()
+    raw_data = collect_data()
     logger.info("데이터 수집 완료")
     
     # 데이터 전처리

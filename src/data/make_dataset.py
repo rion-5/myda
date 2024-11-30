@@ -42,7 +42,7 @@ def collect_data_db() -> Optional[List[Dict]]:
 import pandas as pd
 from pathlib import Path
 
-def collect_data_csv() -> Optional[List[Dict]]:
+def collect_data() -> Optional[List[Dict]]:
     """
     Load data from CSV file
     Returns:

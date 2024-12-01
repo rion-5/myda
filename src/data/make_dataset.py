@@ -1,7 +1,7 @@
 from typing import Optional, List, Dict
 import logging
 from psycopg2.extras import RealDictCursor
-from .database import get_db_connection # src/data/database.py
+from src.data.database import get_db_connection # src/data/database.py
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

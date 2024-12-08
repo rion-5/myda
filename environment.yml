@@ -1,4 +1,4 @@
-name: da01
+name: myda
 channels:
   - defaults
   - conda-forge

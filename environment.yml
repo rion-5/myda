@@ -2,8 +2,6 @@ name: myda
 channels:
   - defaults
   - conda-forge
-  - https://repo.anaconda.com/pkgs/main
-  - https://repo.anaconda.com/pkgs/r
 dependencies:
   - anyio=4.6.2.post1
   - appnope=0.1.4
@@ -86,8 +84,6 @@ dependencies:
   - libedit=3.1.20230828
   - libexpat=2.6.3
   - libffi=3.4.4
-  - libgfortran=5.0.0
-  - libgfortran5=11.3.0
   - libopenblas=0.3.21
   - libpng=1.6.39
   - libpq=17.0
@@ -137,8 +133,6 @@ dependencies:
   - pure_eval=0.2.3
   - pycparser=2.22
   - pygments=2.18.0
-  - pyobjc-core=10.3.1
-  - pyobjc-framework-cocoa=10.3.1
   - pyparsing=3.2.0
   - pysocks=1.7.1
   - python=3.12.2

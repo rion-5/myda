@@ -3,7 +3,7 @@
 import os
 import pandas as pd
 import logging
-from src.data.make_dataset import collect_data_db, collect_data
+from src.data.make_dataset import collect_data_employ, collect_data
 from src.data.preprocessing import clean_data
 from src.analysis.analyze import perform_analysis, interpret_results
 from src.visualization.visualize import create_visualizations
@@ -36,7 +36,7 @@ def main():
     logger.info("프로젝트 구조 설정 완료")
     
     # 데이터 수집
-    # raw_data = collect_data_db()
+    # raw_data = collect_data_employ()
     raw_data = collect_data()
     if(raw_data is None):
         logger.error("데이터 수집 실패")
